@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="158dp"
+            android:background="#66B5F8"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="-11dp"
+                tools:srcCompat="@drawable/nav"
+                android:contentDescription="TODO" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:foregroundGravity="center_horizontal"
+                android:gravity="center"
+                android:text="CLASS CONTROLLING"
+                android:textSize="21sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="14dp" />
+
+            <SearchView
+                android:layout_width="340dp"
+                android:layout_height="48dp"
+                android:background="@drawable/roundsearch">
+
+            </SearchView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="577dp"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="19dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="185dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton7"
+                    android:layout_width="367dp"
+                    android:layout_height="156dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/awan" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="35dp"
+                    app:srcCompat="@drawable/thermometer" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="45dp"
+                    android:text="24°C"
+                    android:textColor="#E4FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Senin, 9 November 2020"
+                    android:textColor="#EEFFFFFF"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="131dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton9"
+                    android:layout_width="349dp"
+                    android:layout_height="106dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/lamp" />
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="55dp"
+                    android:ellipsize="none"
+                    android:textColor="#C11F1717"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="right|center_horizontal|center_vertical"
+                    android:layout_marginRight="45dp"
+                    app:srcCompat="@drawable/lampu" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Lampu Depan"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

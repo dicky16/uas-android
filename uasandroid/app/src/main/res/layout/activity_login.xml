@@ -2,8 +2,173 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/canvas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".MainActivity"
+    android:background="#66B5F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="67dp" />
+
+        <TextView
+            android:id="@+id/Judul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:text="MYSCHOLL MISALE"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:width="280dp"
+            android:background="@drawable/form"
+            android:ems="10"
+            android:hint="   Username"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="11dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:width="280dp"
+            android:background="@drawable/form"
+            android:ems="10"
+            android:foregroundGravity="center"
+            android:hint="   Password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="13dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/remember"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lora"
+                android:text="Remember Me"
+                android:textColor="#FFFFFF" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="46dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:buttonTint="#6979F8"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|center_horizontal"
+            android:background="@drawable/rounded"
+            android:fontFamily="@font/actor"
+            android:text="login" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="24dp" />
+
+        <TextView
+            android:id="@+id/lupa"
+            android:layout_width="144dp"
+            android:layout_height="31dp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/lora"
+            android:gravity="center"
+            android:text="Lupa Password ?"
+            android:textColor="#FFFFFF" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="19dp" />
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/belum"
+                android:layout_width="114dp"
+                android:layout_height="49dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/lora"
+                android:gravity="center"
+                android:text="Belum Punya Akun ?"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/buat"
+                android:layout_width=" 108dp"
+                android:layout_height="29dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbuat"
+                android:fontFamily="@font/actor"
+                android:text="Buat Akun Baru" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:id="@+id/activity_main"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            tools:context="com.example.android.uiudacity.MainActivity">
+
+            <ImageView
+                android:id="@+id/gambar"
+                android:layout_width="match_parent"
+                android:layout_height="226dp"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:foregroundGravity="center_vertical|center|center_horizontal"
+                android:src="@drawable/gambar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
