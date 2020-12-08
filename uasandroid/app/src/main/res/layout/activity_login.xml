@@ -22,12 +22,11 @@
             android:id="@+id/Judul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_gravity="center_horizontal"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/roboto_medium"
             android:foregroundGravity="center"
             android:gravity="center"
-            android:text="MYSCHOLL MISALE"
+            android:text="@string/myscholl_misale"
             android:textColor="#FFFFFF"
             android:textSize="21sp" />
 
@@ -40,11 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:width="280dp"
+            android:autofillHints=""
             android:background="@drawable/form"
             android:ems="10"
-            android:hint="   Username"
+            android:hint="Username"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:paddingStart="15dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -55,12 +56,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:width="280dp"
+            android:autofillHints=""
             android:background="@drawable/form"
             android:ems="10"
             android:foregroundGravity="center"
-            android:hint="   Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:minHeight="48dp"
+            android:paddingStart="15dp"
             android:textSize="18sp" />
 
         <Space
@@ -80,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/lora"
-                android:text="Remember Me"
+                android:text="@string/remember_me"
                 android:textColor="#FFFFFF" />
 
             <CheckBox
@@ -102,7 +105,7 @@
             android:layout_gravity="center|center_horizontal"
             android:background="@drawable/rounded"
             android:fontFamily="@font/actor"
-            android:text="login" />
+            android:text="@string/login" />
 
         <Space
             android:layout_width="match_parent"
@@ -115,7 +118,7 @@
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/lora"
             android:gravity="center"
-            android:text="Lupa Password ?"
+            android:text="@string/lupa_password"
             android:textColor="#FFFFFF" />
 
         <Space
@@ -136,17 +139,17 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/lora"
                 android:gravity="center"
-                android:text="Belum Punya Akun ?"
+                android:text="@string/belum_punya_akun"
                 android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/buat"
-                android:layout_width=" 108dp"
+                android:layout_width="108dp"
                 android:layout_height="29dp"
                 android:layout_weight="1"
                 android:background="@drawable/roundbuat"
                 android:fontFamily="@font/actor"
-                android:text="Buat Akun Baru" />
+                android:text="@string/buat_akun_baru" />
         </LinearLayout>
 
         <Space
@@ -165,7 +168,8 @@
                 android:layout_height="226dp"
                 android:layout_gravity="center|center_horizontal|center_vertical"
                 android:foregroundGravity="center_vertical|center|center_horizontal"
-                android:src="@drawable/gambar" />
+                android:src="@drawable/gambar"
+                android:contentDescription="@string/todo" />
         </LinearLayout>
 
     </LinearLayout>
