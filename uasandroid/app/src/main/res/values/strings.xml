@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">uas-android</string>
+    <string name="todo">TODO</string>
+    <string name="hari">Senin, 9 November 2020</string>
+    <string name="suhu">24°C</string>
+    <string name="class_controlling">CLASS CONTROLLING</string>
+    <string name="lampu_depan">Lampu Depan</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="login">login</string>
+    <string name="lupa_password">Lupa Password ?</string>
+    <string name="belum_punya_akun">Belum Punya Akun ?</string>
+    <string name="buat_akun_baru">Buat Akun Baru</string>
+    <string name="myscholl_misale">MYSCHOLL MISALE</string>
+    <string name="kelas_a">KELAS A</string>
+    <string name="kelas_b">KELAS B</string>
+    <string name="detail_data_pinjaman_kelas">DETAIL DATA PINJAMAN KELAS</string>
+    <string name="nama">Nama</string>
+    <string name="mulai">Mulai</string>
+    <string name="selesai">Selesai</string>
+    <string name="submit">Submit</string>
+    <string name="controlling_listrik">Controlling Listrik</string>
+
 </resources>
