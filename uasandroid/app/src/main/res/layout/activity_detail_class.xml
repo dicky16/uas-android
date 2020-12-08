@@ -27,10 +27,10 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="left"
-                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
                 android:layout_marginTop="-11dp"
                 tools:srcCompat="@drawable/nav"
-                android:contentDescription="TODO" />
+                android:contentDescription="@string/todo" />
 
             <TextView
                 android:id="@+id/textView"
@@ -39,7 +39,7 @@
                 android:layout_gravity="center_vertical"
                 android:foregroundGravity="center_horizontal"
                 android:gravity="center"
-                android:text="CLASS CONTROLLING"
+                android:text="@string/class_controlling"
                 android:textSize="21sp" />
 
             <Space
@@ -50,7 +50,6 @@
                 android:layout_width="340dp"
                 android:layout_height="48dp"
                 android:background="@drawable/roundsearch">
-
             </SearchView>
 
         </LinearLayout>
@@ -73,23 +72,25 @@
                     android:layout_width="367dp"
                     android:layout_height="156dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/awan" />
+                    app:srcCompat="@drawable/awan"
+                    android:contentDescription="@string/todo" />
 
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="58dp"
                     android:layout_height="58dp"
                     android:layout_gravity="right|center_vertical"
-                    android:layout_marginRight="35dp"
-                    app:srcCompat="@drawable/thermometer" />
+                    android:layout_marginEnd="35dp"
+                    app:srcCompat="@drawable/thermometer"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="45dp"
-                    android:text="24°C"
+                    android:layout_marginStart="45dp"
+                    android:text="@string/suhu"
                     android:textColor="#E4FFFFFF"
                     android:textSize="24sp" />
 
@@ -98,10 +99,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Senin, 9 November 2020"
+                    android:text="@string/hari"
                     android:textColor="#EEFFFFFF"
                     android:textSize="16sp" />
             </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -112,14 +114,15 @@
                     android:layout_width="349dp"
                     android:layout_height="106dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/lamp" />
+                    app:srcCompat="@drawable/lamp"
+                    android:contentDescription="@string/todo" />
 
                 <Switch
                     android:id="@+id/switch1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="55dp"
+                    android:layout_marginStart="55dp"
                     android:ellipsize="none"
                     android:textColor="#C11F1717"
                     android:textSize="14sp" />
@@ -129,15 +132,16 @@
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:layout_gravity="right|center_horizontal|center_vertical"
-                    android:layout_marginRight="45dp"
-                    app:srcCompat="@drawable/lampu" />
+                    android:layout_marginEnd="45dp"
+                    app:srcCompat="@drawable/lampu"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Lampu Depan"
+                    android:text="@string/lampu_depan"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
@@ -145,5 +149,7 @@
 
         </LinearLayout>
 
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
