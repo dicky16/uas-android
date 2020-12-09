@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DetailClassActivity">
+    tools:context=".ui.InventoryActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -73,36 +73,35 @@
                     android:layout_width="367dp"
                     android:layout_height="156dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/awan"
+                    app:srcCompat="@drawable/bginven"
                     android:contentDescription="@string/todo" />
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginEnd="35dp"
-                    app:srcCompat="@drawable/thermometer"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="45dp"
-                    android:text="@string/suhu"
-                    android:textColor="#E4FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/hari"
-                    android:textColor="#EEFFFFFF"
-                    android:textSize="16sp" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/inventory"
+                        android:textColor="#EEFFFFFF"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/jum"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
 
@@ -118,16 +117,6 @@
                     app:srcCompat="@drawable/lamp"
                     android:contentDescription="@string/todo" />
 
-                <Switch
-                    android:id="@+id/switch1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="55dp"
-                    android:ellipsize="none"
-                    android:textColor="#C11F1717"
-                    android:textSize="14sp" />
-
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="55dp"
@@ -138,13 +127,24 @@
                     android:contentDescription="@string/todo" />
 
                 <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="45dp"
+                    android:gravity="center"
+                    android:text="@string/barang1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/lampu_depan"
+                    android:text="@string/jum2"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="24sp" />
 
             </androidx.cardview.widget.CardView>
 
