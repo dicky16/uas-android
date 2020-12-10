@@ -5,7 +5,7 @@
     android:id="@+id/canvas"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".ui.LoginActivity"
     android:background="#66B5F8">
 
     <LinearLayout

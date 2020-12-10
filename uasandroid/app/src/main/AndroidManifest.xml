@@ -11,13 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DetailPinjamanActivity"/>
+<!--        <activity-->
+<!--            android:name=".ui.SideBarActivity"-->
+<!--            android:label="@string/title_activity_side_bar"-->
+<!--            android:theme="@style/AppTheme.NoActionBar"></activity>-->
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.InventoryActivity" />
+        <activity android:name=".ui.DetailPinjamanActivity" />
         <activity android:name=".ui.PinjamanActivity" />
-<!--        <activity android:name=".ui.HomeActivity" />-->
+        <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.DetailClassActivity" />
-<!--        <activity android:name=".ui.ControllActivity" />-->
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ui.ControllActivity">
+        <activity android:name=".ui.ControllActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
