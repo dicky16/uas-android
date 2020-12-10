@@ -3,45 +3,56 @@ package com.slim.uas_android.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.slim.uas_android.R
-import org.json.JSONObject
+import com.slim.uas_android.adapter.ClassAdapter
+import com.slim.uas_android.api.DataRepository
+import com.slim.uas_android.model.ClassModel
+import kotlinx.android.synthetic.main.activity_controll.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ControllActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_controll)
+        rv_class.setHasFixedSize(true)
         getKelas()
     }
 
     private fun getKelas() {
-//        val client = AsyncHttpClient()
-//        client.addHeader("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwNzQ3Njg3OCwiZXhwIjoxNjA3NDgwNDc4LCJuYmYiOjE2MDc0NzY4NzgsImp0aSI6Imt1cVVnOEhhdnJrd2MzUnciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.XdfKZO_0OM-Ch1X0ufjOZrddCYEWAA0I_yHuXs195r4")
-//        val url = "http://192.168.43.214/web-uas-android/api/v1/kelas"
-////        val listFood = ArrayList<FoodModel>()
-//        client.get(url, object : AsyncHttpResponseHandler() {
-//            override fun onSuccess(statusCode: Int, headers: Array<Header>, responseBody: ByteArray) {
-////                progressBar.visibility = View.INVISIBLE
-//                val result = String(responseBody)
-//                try {
-//                    val jsonObject = JSONObject(result)
-//                    val jsonArray = jsonObject.getJSONArray("data")
-//                    val jsonObj = jsonArray.getJSONObject(1)
-//
-//                    val length = jsonArray.length() - 1
-//                    Log.d("data tes", jsonObj.getString("room_name"))
-//
-//                } catch (e: Exception) {
-//                    Toast.makeText(this@ControllActivity, e.message, Toast.LENGTH_SHORT).show()
-//                    Log.d("error", e.message)
-//                    e.printStackTrace()
-//                }
-//            }
-//
-//            override fun onFailure(statusCode: Int, headers: Array<Header>, responseBody: ByteArray, error: Throwable) {
-//
-//            }
-//        })
+        val listClass = ArrayList<ClassModel>()
+        var token:String = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjQzLjIxNFwvd2ViLXVhcy1hbmRyb2lkXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA3NTc4NDAzLCJleHAiOjE2MDc1ODIwMDMsIm5iZiI6MTYwNzU3ODQwMywianRpIjoicXd2aVdVWjRDc2NTeVRuViIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.9zUf4CrUqxi6skQan0vzh72D__n4BUW-XuXDg7WX1Ac"
+        val postServices = DataRepository.create()
+        postServices.getClasses(token).enqueue(object : Callback<List<ClassModel>> {
+
+            override fun onResponse(call: Call<List<ClassModel>>, response: Response<List<ClassModel>>) {
+                if (response.isSuccessful) {
+                    val data = response.body()
+                    data?.map {
+//                        Log.e("tag", "data = ${it.room_name}")
+                        val list = ClassModel(
+                            it.id,
+                            it.room_name
+                        )
+                        listClass.add(list)
+                        showRecyclerClass(listClass)
+                    }
+                    Log.e("tag", "data = ${listClass.get(1).room_name}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<ClassModel>>, error: Throwable) {
+                Log.e("tag", "errornya ${error.message}")
+            }
+        })
+    }
+
+    private fun showRecyclerClass(list: ArrayList<ClassModel>) {
+        rv_class.layoutManager = LinearLayoutManager(this)
+        val foodAdapter = ClassAdapter(list)
+        foodAdapter.notifyDataSetChanged()
+        rv_class.adapter = foodAdapter
     }
 }

@@ -35,6 +35,7 @@
             android:layout_height="50dp" />
 
         <EditText
+            android:id="@+id/edt_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -52,6 +53,7 @@
             android:layout_height="11dp" />
 
         <EditText
+            android:id="@+id/edt_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

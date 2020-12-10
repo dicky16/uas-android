@@ -21,5 +21,8 @@
     <string name="selesai">Selesai</string>
     <string name="submit">Submit</string>
     <string name="controlling_listrik">Controlling Listrik</string>
+    <string name="peminjaman_ruangan">Peminjaman Ruangan</string>
+    <string name="inventory_management">Inventory Management</string>
+    <string name="cctv">CCTV</string>
 
 </resources>

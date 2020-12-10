@@ -1,4 +1,4 @@
-package com.slim.uas_android.data
+package com.slim.uas_android.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

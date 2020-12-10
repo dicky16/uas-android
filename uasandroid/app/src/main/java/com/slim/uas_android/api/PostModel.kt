@@ -1,4 +1,4 @@
-package com.slim.uas_android.data
+package com.slim.uas_android.api
 
 data class PostModel(val id:Int,
                      val room_name:String,
