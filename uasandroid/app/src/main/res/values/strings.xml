@@ -20,12 +20,10 @@
     <string name="mulai">Mulai</string>
     <string name="selesai">Selesai</string>
     <string name="submit">Submit</string>
-    <string name="controlling_listrik">Controlling Listrik</string>
-<<<<<<< HEAD
+    <string name="controlling_listrik">Class Monitoring</string>
     <string name="peminjaman_ruangan">Peminjaman Ruangan</string>
     <string name="inventory_management">Inventory Management</string>
     <string name="cctv">CCTV</string>
-=======
     <string name="inventory">Total Inventory</string>
     <string name="jum">5</string>
     <string name="barang1">Lampu</string>
@@ -41,6 +39,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
->>>>>>> e39e5c924a1246b41af1c008eb9f5456566d5511
+
+    <string name="token">token</string>
+    <string name="class_monitoring">Class Monitoring</string>
 
 </resources>

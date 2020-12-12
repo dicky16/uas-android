@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.slim.uas_android.R
 import com.slim.uas_android.api.DataRepository
 import com.slim.uas_android.model.LoginResponse
+import com.slim.uas_android.storage.SharePrefManager
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,6 +37,7 @@ class LoginActivity : AppCompatActivity() {
                     data?.map {
                         val status = it.success
                         if(status) {
+                            SharePrefManager.getInstance(applicationContext).saveUser(data)
                             val intent = Intent(applicationContext, HomeActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
@@ -51,5 +53,17 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        if(SharePrefManager.getInstance(this).isLoggedIn){
+            val intent = Intent(applicationContext, HomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+            startActivity(intent)
+        }
+    }
+
 
 }

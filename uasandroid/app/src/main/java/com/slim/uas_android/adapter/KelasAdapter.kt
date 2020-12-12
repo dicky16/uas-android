@@ -1,14 +1,18 @@
 package com.slim.uas_android.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.slim.uas_android.R
 import com.slim.uas_android.model.ClassModel
 import kotlinx.android.synthetic.main.class_item.view.*
 
-class ClassAdapter(private  val listClass: ArrayList<ClassModel>) : RecyclerView.Adapter<ClassAdapter.ListViewHolder>() {
+class KelasAdapter(private val listClass: ArrayList<ClassModel>) : RecyclerView.Adapter<KelasAdapter.ListViewHolder>(){
+
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.class_item, viewGroup, false)
         return ListViewHolder(view)
@@ -24,6 +28,9 @@ class ClassAdapter(private  val listClass: ArrayList<ClassModel>) : RecyclerView
         fun bind(classModel: ClassModel) {
             with(itemView){
                 tv_class.text = classModel.room_name
+                itemView.setOnClickListener {
+                    Log.e("tag", "kepenek = ${classModel.room_name}")
+                    Toast.makeText(itemView.context, "Kamu memilih ${classModel.room_name}", Toast.LENGTH_SHORT).show() }
             }
         }
     }

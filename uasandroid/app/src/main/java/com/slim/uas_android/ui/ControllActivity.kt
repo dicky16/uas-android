@@ -3,11 +3,12 @@ package com.slim.uas_android.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.slim.uas_android.R
-import com.slim.uas_android.adapter.ClassAdapter
+import com.slim.uas_android.adapter.KelasAdapter
 import com.slim.uas_android.api.DataRepository
 import com.slim.uas_android.model.ClassModel
+import com.slim.uas_android.storage.SharePrefManager
 import kotlinx.android.synthetic.main.activity_controll.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,8 +23,9 @@ class ControllActivity : AppCompatActivity() {
     }
 
     private fun getKelas() {
+        val mToken = SharePrefManager.getInstance(this).getToken
         val listClass = ArrayList<ClassModel>()
-        var token:String = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjQzLjIxNFwvd2ViLXVhcy1hbmRyb2lkXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA3NTc4NDAzLCJleHAiOjE2MDc1ODIwMDMsIm5iZiI6MTYwNzU3ODQwMywianRpIjoicXd2aVdVWjRDc2NTeVRuViIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.9zUf4CrUqxi6skQan0vzh72D__n4BUW-XuXDg7WX1Ac"
+        var token:String = "Bearer $mToken"
         val postServices = DataRepository.create()
         postServices.getClasses(token).enqueue(object : Callback<List<ClassModel>> {
 
@@ -31,15 +33,15 @@ class ControllActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val data = response.body()
                     data?.map {
-//                        Log.e("tag", "data = ${it.room_name}")
                         val list = ClassModel(
                             it.id,
                             it.room_name
                         )
                         listClass.add(list)
                         showRecyclerClass(listClass)
+
                     }
-                    Log.e("tag", "data = ${listClass.get(1).room_name}")
+                    Log.e("tag", "data = ${listClass.get(0).room_name}")
                 }
             }
 
@@ -50,9 +52,22 @@ class ControllActivity : AppCompatActivity() {
     }
 
     private fun showRecyclerClass(list: ArrayList<ClassModel>) {
-        rv_class.layoutManager = LinearLayoutManager(this)
-        val foodAdapter = ClassAdapter(list)
-        foodAdapter.notifyDataSetChanged()
-        rv_class.adapter = foodAdapter
+        rv_class.layoutManager = GridLayoutManager(this, 2)
+        val classAdapter = KelasAdapter(list)
+        classAdapter.notifyDataSetChanged()
+        rv_class.adapter = classAdapter
+//        kelasAdapter = KelasAdapter(arrayListOf(), object : KelasAdapter.OnAdapterListener {
+//            override fun onClick(result: ClassModel) {
+//                startActivity(
+//                    Intent(this@ControllActivity, DetailClassActivity::class.java)
+//                        .putExtra("intent_title", result.room_name)
+////                        .putExtra("intent_image", result.image)
+//                )
+//            }
+//        })
+//        rv_class.apply {
+//            layoutManager = LinearLayoutManager(context)
+//            adapter = kelasAdapter
+//        }
     }
 }

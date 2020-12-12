@@ -47,11 +47,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="14dp" />
 
-            <SearchView
-                android:layout_width="340dp"
-                android:layout_height="48dp"
-                android:background="@drawable/roundsearch">
-            </SearchView>
+<!--            <SearchView-->
+<!--                android:layout_width="340dp"-->
+<!--                android:layout_height="48dp"-->
+<!--                android:background="@drawable/roundsearch">-->
+<!--            </SearchView>-->
+            <TextView
+                android:id="@+id/btn_inventory"
+                android:text="Inventory"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

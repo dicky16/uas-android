@@ -6,6 +6,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -22,8 +23,8 @@
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.DetailClassActivity" />
         <activity android:name=".ui.ControllActivity" />
-        <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".MainActivity">
+<!--        <activity android:name=".ui.LoginActivity" />-->
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
