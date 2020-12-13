@@ -43,6 +43,14 @@
                 android:text="@string/class_controlling"
                 android:textSize="21sp" />
 
+            <TextView
+                android:id="@+id/tv_detail_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="@string/kelas_a"
+                android:textSize="20sp" />
+
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="14dp" />

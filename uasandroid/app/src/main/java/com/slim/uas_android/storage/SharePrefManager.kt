@@ -2,6 +2,7 @@ package com.slim.uas_android.storage
 
 import android.content.Context
 import com.slim.uas_android.model.LoginResponse
+import java.util.*
 
 class SharePrefManager private constructor(private val mCtx: Context) {
     val isLoggedIn: Boolean
@@ -13,6 +14,18 @@ class SharePrefManager private constructor(private val mCtx: Context) {
         get() {
             val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_LOGIN, Context.MODE_PRIVATE)
             return sharedPreferences.getString("token", "null")
+        }
+    val getUserData: Array<String?>
+        get() {
+            val sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_LOGIN, Context.MODE_PRIVATE)
+            val data = arrayOf(
+                "${sharedPreferences.getInt("id", 0)}",
+                sharedPreferences.getString("name", "null"),
+                sharedPreferences.getString("email", "null"),
+                sharedPreferences.getString("level", "null"),
+                sharedPreferences.getString("token", "null")
+            )
+            return data
         }
 //
 //    val user: LoginResponse
@@ -35,6 +48,7 @@ class SharePrefManager private constructor(private val mCtx: Context) {
         editor.putInt("id", user[0].data.id)
         editor.putString("email", user[0].data.email)
         editor.putString("name", user[0].data.name)
+        editor.putString("level", user[0].data.level)
         editor.putString("token", user[0].data.token)
 
         editor.apply()

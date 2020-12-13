@@ -1,5 +1,6 @@
 package com.slim.uas_android.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -41,7 +42,6 @@ class ControllActivity : AppCompatActivity() {
                         showRecyclerClass(listClass)
 
                     }
-                    Log.e("tag", "data = ${listClass.get(0).room_name}")
                 }
             }
 
@@ -56,18 +56,18 @@ class ControllActivity : AppCompatActivity() {
         val classAdapter = KelasAdapter(list)
         classAdapter.notifyDataSetChanged()
         rv_class.adapter = classAdapter
-//        kelasAdapter = KelasAdapter(arrayListOf(), object : KelasAdapter.OnAdapterListener {
-//            override fun onClick(result: ClassModel) {
-//                startActivity(
-//                    Intent(this@ControllActivity, DetailClassActivity::class.java)
-//                        .putExtra("intent_title", result.room_name)
-////                        .putExtra("intent_image", result.image)
-//                )
-//            }
-//        })
-//        rv_class.apply {
-//            layoutManager = LinearLayoutManager(context)
-//            adapter = kelasAdapter
-//        }
+        classAdapter.setOnItemClickCallBack(object : KelasAdapter.OnItemClickCallBack{
+            override fun onItemClicked(data: ClassModel) {
+                detailClassControlling(data)
+            }
+        })
+    }
+
+    fun detailClassControlling(classModel: ClassModel) {
+        val intent = Intent(applicationContext, DetailClassActivity::class.java)
+            intent.putExtra("id", classModel.id)
+            intent.putExtra("kelas", classModel.room_name)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
     }
 }

@@ -10,33 +10,35 @@ import com.slim.uas_android.R
 import com.slim.uas_android.model.ClassModel
 import kotlinx.android.synthetic.main.class_item.view.*
 
-class KelasAdapter(private val listClass: ArrayList<ClassModel>) : RecyclerView.Adapter<KelasAdapter.ListViewHolder>(){
+class KelasAdapterPinjam(private val listFood: ArrayList<ClassModel>) : RecyclerView.Adapter<KelasAdapterPinjam.ListViewHolder>(){
 
-    private var onItemClickCallBack: OnItemClickCallBack? = null
-    fun setOnItemClickCallBack(onItemClickCallBack: OnItemClickCallBack) {
+    private var onItemClickCallBack: KelasAdapter.OnItemClickCallBack? = null
+    fun setOnItemClickCallBack(onItemClickCallBack: KelasAdapter.OnItemClickCallBack) {
         this.onItemClickCallBack = onItemClickCallBack
     }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.class_item, viewGroup, false)
         return ListViewHolder(view)
     }
 
-    override fun getItemCount(): Int = listClass.size
+    override fun getItemCount(): Int = listFood.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.bind(listClass[position])
+        holder.bind(listFood[position])
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(classModel: ClassModel) {
             with(itemView){
                 tv_class.text = classModel.room_name
+
                 itemView.setOnClickListener {onItemClickCallBack?.onItemClicked(classModel)}
             }
         }
     }
-
     interface OnItemClickCallBack {
         fun onItemClicked(data: ClassModel)
     }
+
 }

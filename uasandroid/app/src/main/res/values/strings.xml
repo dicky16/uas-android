@@ -42,5 +42,6 @@
 
     <string name="token">token</string>
     <string name="class_monitoring">Class Monitoring</string>
+    <string name="keterangan">Keterangan</string>
 
 </resources>
