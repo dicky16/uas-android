@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="349dp"
+            android:layout_height="106dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/lamp"
+            android:contentDescription="@string/todo" />
+
+        <Switch
+            android:id="@+id/btn_switch_perangkat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="55dp"
+            android:ellipsize="none"
+            android:textColor="#C11F1717"
+            android:textSize="14sp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="right|center_horizontal|center_vertical"
+            android:layout_marginEnd="45dp"
+            app:srcCompat="@drawable/lampu"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tv_perangkat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/lampu_depan"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

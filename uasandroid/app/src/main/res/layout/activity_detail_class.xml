@@ -72,7 +72,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="577dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <Space
@@ -80,10 +80,13 @@
                 android:layout_height="19dp" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="185dp">
 
-                <ImageButton
+                <ImageView
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:id="@+id/imageButton7"
                     android:layout_width="367dp"
                     android:layout_height="156dp"
@@ -121,47 +124,10 @@
             </androidx.cardview.widget.CardView>
 
 
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sensor"
                 android:layout_width="match_parent"
-                android:layout_height="131dp">
-
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="349dp"
-                    android:layout_height="106dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/lamp"
-                    android:contentDescription="@string/todo" />
-
-                <Switch
-                    android:id="@+id/switch1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="55dp"
-                    android:ellipsize="none"
-                    android:textColor="#C11F1717"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_gravity="right|center_horizontal|center_vertical"
-                    android:layout_marginEnd="45dp"
-                    app:srcCompat="@drawable/lampu"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/lampu_depan"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-            </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

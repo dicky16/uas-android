@@ -75,7 +75,7 @@ class DetailPinjamanActivity : AppCompatActivity() {
     fun submitPinjam(mulai:String, selesai:String, keterangan:String, status:String, user_id:Int, kelas_id:Int) {
         //show loading
         val pDialog =
-            SweetAlertDialog(applicationContext, SweetAlertDialog.PROGRESS_TYPE)
+            SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE)
         pDialog.progressHelper.barColor = Color.parseColor("#A5DC86")
         pDialog.titleText = "Loading"
         pDialog.setCancelable(true)

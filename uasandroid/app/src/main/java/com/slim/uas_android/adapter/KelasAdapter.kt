@@ -1,6 +1,5 @@
 package com.slim.uas_android.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.slim.uas_android.R
 import com.slim.uas_android.model.ClassModel
+import com.slim.uas_android.model.SensorModel
 import kotlinx.android.synthetic.main.class_item.view.*
 
 class KelasAdapter(private val listClass: ArrayList<ClassModel>) : RecyclerView.Adapter<KelasAdapter.ListViewHolder>(){

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "194568149241",
+    "firebase_url": "https://uas-android-1c142.firebaseio.com",
+    "project_id": "uas-android-1c142",
+    "storage_bucket": "uas-android-1c142.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194568149241:android:a1947df3d9d92ceaa12a28",
+        "android_client_info": {
+          "package_name": "com.slim.uas_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194568149241-ktseveh3ceu2pkjihqcuhtb4ks3c4ais.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaDT49Pp8chdsLsKGVIQa8OAr9AfyjXoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194568149241-ktseveh3ceu2pkjihqcuhtb4ks3c4ais.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
