@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/btn_inventory_detail"
+            android:layout_width="349dp"
+            android:layout_height="106dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/lamp"
+            android:contentDescription="@string/todo" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="right|center_horizontal|center_vertical"
+            android:layout_marginEnd="45dp"
+            app:srcCompat="@drawable/lampu"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/tv_nama_barang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="45dp"
+            android:gravity="center"
+            android:text="@string/barang1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_jumlah_inventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/jum2"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

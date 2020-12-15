@@ -1,12 +1,13 @@
 package com.slim.uas_android.api
 
 import com.slim.uas_android.model.ClassModel
+import com.slim.uas_android.model.InventoryModel
 import com.slim.uas_android.model.LoginResponse
 import com.slim.uas_android.model.PinjamResponse
 import retrofit2.Call
 import retrofit2.http.*
 
-interface PostServices {
+interface ApiService {
 
     @GET("v1/kelas")
     fun getClasses(
@@ -31,5 +32,10 @@ interface PostServices {
         @Field("kelas_id") kelas_id:Int,
         @Header("Authorization") token:String
     ): Call<List<PinjamResponse>>
+
+    @GET("v1/inventory")
+    fun getInventory(
+        @Header("Authorization") token:String
+    ): Call<List<InventoryModel>>
 
 }

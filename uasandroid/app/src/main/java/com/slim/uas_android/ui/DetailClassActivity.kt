@@ -13,6 +13,7 @@ import com.google.firebase.database.ktx.getValue
 import com.slim.uas_android.R
 import com.slim.uas_android.adapter.KelasAdapter
 import com.slim.uas_android.adapter.SensorAdapter
+import com.slim.uas_android.model.ClassModel
 import com.slim.uas_android.model.SensorModel
 import kotlinx.android.synthetic.main.activity_controll.*
 import kotlinx.android.synthetic.main.activity_detail_class.*
@@ -67,6 +68,36 @@ class DetailClassActivity : AppCompatActivity() {
         val sensorAdapter = SensorAdapter(list)
         sensorAdapter.notifyDataSetChanged()
         rv_sensor.adapter = sensorAdapter
+        sensorAdapter.setOnItemClickCallBack(object : SensorAdapter.OnItemClickCallBack{
+            override fun onItemClicked(data: SensorModel) {
+                setSensor(data)
+            }
+        })
+    }
+
+    fun setSensor (sensor: SensorModel) {
+        val id:Int? = intent.getIntExtra("id",0)
+        if(sensor.value == "on") {
+                        ref = FirebaseDatabase.getInstance().getReference("kelas").child("$id")
+                        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onCancelled(p0: DatabaseError) {
+
+                            }
+                            override fun onDataChange(p0: DataSnapshot) {
+                                ref.child(sensor.key).setValue("off")
+                            }
+                        })
+                    } else {
+                        ref = FirebaseDatabase.getInstance().getReference("kelas").child("$id")
+                        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onCancelled(p0: DatabaseError) {
+
+                            }
+                            override fun onDataChange(p0: DataSnapshot) {
+                                ref.child(sensor.key).setValue("on")
+                            }
+                        })
+                    }
     }
 
 }

@@ -4,29 +4,29 @@
     package="com.slim.uas_android">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-        tools:replace="android:icon"
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-<!--        <activity-->
-<!--            android:name=".ui.SideBarActivity"-->
-<!--            android:label="@string/title_activity_side_bar"-->
-<!--            android:theme="@style/AppTheme.NoActionBar"></activity>-->
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon">
+        <activity android:name=".ui.DetailInventoryActivity"></activity>
+        <!-- <activity -->
+        <!-- android:name=".ui.SideBarActivity" -->
+        <!-- android:label="@string/title_activity_side_bar" -->
+        <!-- android:theme="@style/AppTheme.NoActionBar"></activity> -->
         <activity android:name=".ui.RegisterActivity" />
         <activity android:name=".ui.InventoryActivity" />
         <activity android:name=".ui.DetailPinjamanActivity" />
         <activity android:name=".ui.PinjamanActivity" />
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.DetailClassActivity" />
-        <activity android:name=".ui.ControllActivity" />
-<!--        <activity android:name=".ui.LoginActivity" />-->
+        <activity android:name=".ui.ControllActivity" /> <!-- <activity android:name=".ui.LoginActivity" /> -->
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

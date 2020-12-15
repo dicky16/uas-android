@@ -94,7 +94,7 @@
                         android:textSize="24sp" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_total_inventory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -107,48 +107,10 @@
             </androidx.cardview.widget.CardView>
 
 
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_inventory"
                 android:layout_width="match_parent"
-                android:layout_height="131dp">
-
-                <ImageButton
-                    android:id="@+id/imageButton9"
-                    android:layout_width="349dp"
-                    android:layout_height="106dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/lamp"
-                    android:contentDescription="@string/todo" />
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:layout_gravity="right|center_horizontal|center_vertical"
-                    android:layout_marginEnd="45dp"
-                    app:srcCompat="@drawable/lampu"
-                    android:contentDescription="@string/todo" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="45dp"
-                    android:gravity="center"
-                    android:text="@string/barang1"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/jum2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24sp" />
-
-            </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

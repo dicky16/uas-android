@@ -5,11 +5,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object DataRepository {
 
-    fun create(): PostServices {
+    fun create(): ApiService {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://192.168.100.66/web-uas-android/api/")
+            .baseUrl("http://192.168.100.76/web-uas-android/api/")
             .build()
-        return retrofit.create(PostServices::class.java)
+        return retrofit.create(ApiService::class.java)
     }
 }

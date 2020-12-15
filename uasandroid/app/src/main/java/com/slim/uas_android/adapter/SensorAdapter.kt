@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.slim.uas_android.R
+import com.slim.uas_android.model.ClassModel
 import com.slim.uas_android.model.SensorModel
 import kotlinx.android.synthetic.main.sensor_item.view.*
 
@@ -14,7 +15,11 @@ class SensorAdapter(private val listFood: ArrayList<SensorModel>) : RecyclerView
     var perangkatId:Int = 0
     //firebase
     lateinit var ref : DatabaseReference
-
+    //click callback
+    private var onItemClickCallBack: SensorAdapter.OnItemClickCallBack? = null
+    fun setOnItemClickCallBack(onItemClickCallBack: SensorAdapter.OnItemClickCallBack) {
+        this.onItemClickCallBack = onItemClickCallBack
+    }
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.sensor_item, viewGroup, false)
         return ListViewHolder(view)
@@ -40,25 +45,38 @@ class SensorAdapter(private val listFood: ArrayList<SensorModel>) : RecyclerView
                     btn_switch_perangkat.isChecked = true
                 }
                 btn_switch_perangkat.setOnClickListener {
-
-                    ref = FirebaseDatabase.getInstance().getReference("kelas").child("$perangkatId")
-                    ref.addValueEventListener(object : ValueEventListener {
-                        override fun onCancelled(p0: DatabaseError) {
-
-                        }
-                        override fun onDataChange(p0: DataSnapshot) {
-                            if(sensor.value == "on") {
-                                ref.child(sensor.key).setValue("off")
-                            } else {
-                                ref.child(sensor.key).setValue("on")
-                            }
-                            Toast.makeText(context, "message $perangkatId",
-                                Toast.LENGTH_SHORT).show()
-                        }
-                    })
+                    onItemClickCallBack?.onItemClicked(sensor)
+//                    if(sensor.value == "on") {
+//                        ref = FirebaseDatabase.getInstance().getReference("kelas").child("$perangkatId")
+//                        ref.addValueEventListener(object : ValueEventListener {
+//                            override fun onCancelled(p0: DatabaseError) {
+//
+//                            }
+//                            override fun onDataChange(p0: DataSnapshot) {
+//                                ref.child(sensor.key).setValue("off")
+//                                Toast.makeText(context, "message $perangkatId",
+//                                    Toast.LENGTH_SHORT).show()
+//                            }
+//                        })
+//                    } else {
+//                        ref = FirebaseDatabase.getInstance().getReference("kelas").child("$perangkatId")
+//                        ref.addValueEventListener(object : ValueEventListener {
+//                            override fun onCancelled(p0: DatabaseError) {
+//
+//                            }
+//                            override fun onDataChange(p0: DataSnapshot) {
+//                                ref.child(sensor.key).setValue("on")
+//                                Toast.makeText(context, "message $perangkatId",
+//                                    Toast.LENGTH_SHORT).show()
+//                            }
+//                        })
+//                    }
                 }
             }
         }
+    }
+    interface OnItemClickCallBack {
+        fun onItemClicked(data: SensorModel)
     }
 
 }
