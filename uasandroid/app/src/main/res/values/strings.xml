@@ -44,5 +44,6 @@
     <string name="class_monitoring">Class Monitoring</string>
     <string name="keterangan">Keterangan</string>
     <string name="peminjaman_kelas">PEMINJAMAN KELAS</string>
+    <string name="pinjaman_saya">Pinjaman Saya</string>
 
 </resources>

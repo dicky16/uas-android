@@ -4,12 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.GridLayoutManager
 import com.slim.uas_android.R
 import com.slim.uas_android.adapter.KelasAdapter
 import com.slim.uas_android.api.DataRepository
 import com.slim.uas_android.model.ClassModel
 import com.slim.uas_android.storage.SharePrefManager
+import com.slim.uas_android.ui.profile.ProfileActivity
 import kotlinx.android.synthetic.main.activity_controll.*
 import retrofit2.Call
 import retrofit2.Callback

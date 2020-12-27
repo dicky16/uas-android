@@ -15,8 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon">
-        <activity android:name=".ui.DetailInventoryActivity"></activity>
-        <!-- <activity -->
+        <activity android:name=".ui.StatusPinjamanActivity"></activity>
+        <activity android:name=".ui.profile.ProfileActivity" />
+        <activity android:name=".ui.DetailInventoryActivity" /> <!-- <activity -->
         <!-- android:name=".ui.SideBarActivity" -->
         <!-- android:label="@string/title_activity_side_bar" -->
         <!-- android:theme="@style/AppTheme.NoActionBar"></activity> -->

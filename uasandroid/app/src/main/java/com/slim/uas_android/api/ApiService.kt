@@ -1,9 +1,6 @@
 package com.slim.uas_android.api
 
-import com.slim.uas_android.model.ClassModel
-import com.slim.uas_android.model.InventoryModel
-import com.slim.uas_android.model.LoginResponse
-import com.slim.uas_android.model.PinjamResponse
+import com.slim.uas_android.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -31,11 +28,37 @@ interface ApiService {
         @Field("user_id") user_id:Int,
         @Field("kelas_id") kelas_id:Int,
         @Header("Authorization") token:String
-    ): Call<List<PinjamResponse>>
+    ): Call<List<ResponseObject>>
 
     @GET("v1/inventory")
     fun getInventory(
-        @Header("Authorization") token:String
+        @Header("Authorization") token:String,
+        @Query("id") id:Int
     ): Call<List<InventoryModel>>
+
+    @GET("v1/pinjam")
+    fun getPinjam(
+        @Header("Authorization") token:String
+    ): Call<List<StatusPinjamModel>>
+
+    @GET("v1/pinjam/id")
+    fun getPinjamById(
+        @Header("Authorization") token:String,
+        @Query("user_id") id:Int
+    ): Call<List<StatusPinjamModel>>
+
+    @FormUrlEncoded
+    @POST("v1/pinjam/terima")
+    fun terimaPinjam(
+        @Header("Authorization") token:String,
+        @Field("id") id:Int
+    ): Call<List<ResponseObject>>
+
+    @FormUrlEncoded
+    @POST("v1/pinjam/tolak")
+    fun tolakPinjam(
+        @Header("Authorization") token:String,
+        @Field("id") id:Int
+    ): Call<List<ResponseObject>>
 
 }

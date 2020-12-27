@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.ControllActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.StatusPinjamanActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,16 +18,6 @@
             android:gravity="center"
             android:orientation="vertical">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="35dp"-->
-<!--                android:layout_height="35dp"-->
-<!--                android:layout_gravity="left"-->
-<!--                android:layout_marginStart="11dp"-->
-<!--                android:layout_marginTop="-11dp"-->
-<!--                tools:srcCompat="@drawable/nav"-->
-<!--                android:contentDescription="@string/todo" />-->
-
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
@@ -36,26 +25,22 @@
                 android:layout_gravity="center_vertical"
                 android:foregroundGravity="center_horizontal"
                 android:gravity="center"
-                android:text="@string/class_monitoring"
+                android:text="@string/pinjaman_saya"
                 android:textSize="21sp" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="14dp" />
 
-            <SearchView
-                android:layout_width="340dp"
-                android:layout_height="48dp"
-                android:background="@drawable/roundsearch">
-
-            </SearchView>
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_class"
+            android:id="@+id/rv_pinjaman_saya"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

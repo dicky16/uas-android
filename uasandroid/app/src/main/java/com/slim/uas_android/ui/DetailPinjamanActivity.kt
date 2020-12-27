@@ -7,14 +7,11 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.slim.uas_android.R
 import com.slim.uas_android.api.DataRepository
-import com.slim.uas_android.fungsi.Fungsi
-import com.slim.uas_android.model.PinjamResponse
+import com.slim.uas_android.model.ResponseObject
 import com.slim.uas_android.storage.SharePrefManager
 import kotlinx.android.synthetic.main.activity_detail_pinjaman.*
 import retrofit2.Call
@@ -85,11 +82,11 @@ class DetailPinjamanActivity : AppCompatActivity() {
         var token:String = "Bearer $mToken"
         val postServices = DataRepository.create()
         if (mToken != null) {
-            postServices.pinjam(mulai, selesai, keterangan, status, user_id, kelas_id, token).enqueue(object : Callback<List<PinjamResponse>> {
+            postServices.pinjam(mulai, selesai, keterangan, status, user_id, kelas_id, token).enqueue(object : Callback<List<ResponseObject>> {
 
-                override fun onResponse(call: Call<List<PinjamResponse>>, response: Response<List<PinjamResponse>>) {
-                    if (response.isSuccessful) {
-                        val data = response.body()
+                override fun onResponse(call: Call<List<ResponseObject>>, responseObject: Response<List<ResponseObject>>) {
+                    if (responseObject.isSuccessful) {
+                        val data = responseObject.body()
                         data?.map {
                             val status = it.success
                             if(status) {
@@ -98,6 +95,10 @@ class DetailPinjamanActivity : AppCompatActivity() {
                                 .setTitleText("Berhasil!")
                                 .setContentText("Berhasil mengajukan pinjaman kelas!")
                                 .show()
+                                edt_nama.setText("")
+                                edt_mulai.setText("")
+                                edt_selesai.setText("")
+                                edt_keterangan.setText("")
                             } else {
                                 if(it.message.equals("Token is Expired") || it.message.equals("Token is Invalid")) {
                                     pDialog.hide()
@@ -117,7 +118,7 @@ class DetailPinjamanActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<List<PinjamResponse>>, error: Throwable) {
+                override fun onFailure(call: Call<List<com.slim.uas_android.model.ResponseObject>>, error: Throwable) {
                     Log.e("tag", "errornya ${error.message}")
                 }
             })

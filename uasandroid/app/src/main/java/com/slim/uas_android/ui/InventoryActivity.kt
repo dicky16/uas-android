@@ -24,16 +24,19 @@ class InventoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventory)
         var nama:String? = intent.getStringExtra("kelas")
+        var id:Int? = intent.getIntExtra("id", 0)
         tv_kelas_inventory.text = nama
-        getInventory()
+        if (id != null) {
+            getInventory(id)
+        }
     }
 
-    fun getInventory() {
+    fun getInventory(id:Int) {
         val mToken = SharePrefManager.getInstance(this).getToken
         val listInventoryModel = ArrayList<InventoryModel>()
         var token:String = "Bearer $mToken"
         val postServices = DataRepository.create()
-        postServices.getInventory(token).enqueue(object : Callback<List<InventoryModel>> {
+        postServices.getInventory(token, id).enqueue(object : Callback<List<InventoryModel>> {
 
             override fun onResponse(call: Call<List<InventoryModel>>, response: Response<List<InventoryModel>>) {
                 if (response.isSuccessful) {
@@ -49,6 +52,7 @@ class InventoryActivity : AppCompatActivity() {
                             it.gambar,
                             it.keterangan
                         )
+                        Log.d("tag", "datanyainventory ${data.size}")
                         listInventoryModel.add(list)
                         tv_total_inventory.text = listInventoryModel.size.toString()
                         showRecyclerInventory(listInventoryModel)

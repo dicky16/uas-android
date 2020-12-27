@@ -1,9 +1,11 @@
 package com.slim.uas_android.ui
 
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import com.slim.uas_android.R
 import com.slim.uas_android.adapter.KelasAdapter
@@ -21,6 +23,23 @@ class PinjamanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pinjaman)
         getKelas()
+        val data = SharePrefManager.getInstance(this).getUserData
+        if(data[3].toString().equals("admin")) {
+            btn_request_pinjaman.visibility = View.VISIBLE
+        }
+        btn_pinjaman_saya.setOnClickListener {
+            val intent = Intent(applicationContext, StatusPinjamanActivity::class.java)
+            intent.putExtra("from", "user")
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
+
+        btn_request_pinjaman.setOnClickListener {
+            val intent = Intent(applicationContext, StatusPinjamanActivity::class.java)
+            intent.putExtra("from", "admin")
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
     }
     private fun getKelas() {
         val mToken = SharePrefManager.getInstance(this).getToken

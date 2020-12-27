@@ -34,10 +34,6 @@ class InventoryAdapter(private val listClass: ArrayList<InventoryModel>) : Recyc
             with(itemView){
                 tv_nama_barang.text = inventoryModel.nama_barang
                 tv_jumlah_inventory.text = inventoryModel.jumlah
-//                Glide.with(itemView.context)
-//                    .load("https://raw.githubusercontent.com/dicky16/test-api/master/food/" + foodModel.gambar)
-//                    .apply(RequestOptions().override(100, 100))
-//                    .into(img_inventory)
                 itemView.setOnClickListener {onItemClickCallBack?.onItemClicked(inventoryModel)}
             }
         }
